@@ -4,13 +4,83 @@
   align-items: center;
   padding: 20px;
 }
-
-input, button {
+body{
+  background:#240046;
+}
+input {
   margin: 5px;
   padding: 10px;
   font-size: 16px;
+  border-radius:15px;
 }
 
-ul {
-  list-style-type: none;
+
+button {
+  font-weight:bold;
+  cursor:pointer;
+  margin:10px 5px;
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid white;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+ }
+ 
+ button::before,
+ button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+ }
+ 
+ button::before {
+  left: -10px;
+  background: #3f22b4;
+ }
+ 
+ button::after {
+  right: -10px;
+  background: #c12e2e;
+ }
+ 
+ button:hover::before,
+ button:hover::after {
+  width: 58%;
+ }
+ 
+ button:hover span {
+  color: white;
+  transition: 0.3s;
+ }
+ 
+ button span {
+  color: white;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+ }
+
+ul{
+  justify-content: center;
+  text-align:center;
+  display:grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 10px;
+  width:80%;
+}
+
+li{
+  color:white;
+  font-size:18px;
+  margin:10px 5px;
+  list-style-type:none;
 }
